@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ChatActivity">
+    <FrameLayout
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:background="#00000000"
+                android:id="@+id/LL"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_alignParentBottom="true">
+                <FrameLayout
+                    android:layout_gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/rl">
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:fillViewport="true"
+                        android:isScrollContainer="true"
+                        android:layout_gravity="right"
+                        android:layoutDirection="ltr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:isScrollContainer="true"
+                            android:id="@+id/emojiPanel"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em2"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em2"/>
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em3"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em3"/>
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em4"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em4"/>
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em5"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em5"/>
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em6"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em6"/>
+                            <ImageView
+                                android:onClick="setEmoji"
+                                android:id="@+id/em7"
+                                android:layout_margin="5dp"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:src="@drawable/em7"/>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_gravity="bottom"
+                    android:id="@+id/rl"
+                    android:paddingLeft="@dimen/mini_square"
+                    android:paddingRight="@dimen/mini_square"
+                    android:paddingTop="@dimen/ptop"
+                    android:paddingBottom="@dimen/ptop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    >
+
+                    <ToggleButton
+                        android:layout_gravity="left|center"
+                        android:layout_width="@dimen/dp30"
+                        android:layout_height="@dimen/dp30"
+                        android:id="@+id/closeOpen"
+                        android:background="@drawable/close_open"
+                        android:textOff=""
+                        android:textOn=""/>
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/mybutton">
+                        <EditText
+
+                            android:padding="10dp"
+                            android:hint="@string/hint"
+                            android:background="#00ffffff"
+                            android:id="@+id/my_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="@dimen/maxheight"
+
+                            />
+                    </FrameLayout>
+                    <Button
+                        android:layout_gravity="right|center"
+                        android:gravity="center"
+                        android:layout_width="@dimen/square"
+                        android:layout_height="@dimen/square"
+                        android:id="@+id/send"
+                        android:background="@drawable/ic_send_off"
+                        />
+
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_alignParentTop="true"
+                android:id="@+id/my_recycler_view"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/LL">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/chat"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    />
+
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ChatActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/FileButton"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_file"
+        android:title="Sent attatchment"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sign_out"
+        android:orderInCategory="100"
+        android:title="Sign out"
+        app:showAsAction="ifRoom" />
+</menu>
